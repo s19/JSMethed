@@ -1,16 +1,21 @@
-'use strict';
+'use strict'
 
-/// Наименование
-const goodTitle = "Блокнот";
-/// Кол-во может изменятся
-let goodCount = 547;
-/// Категория согласно единому справочнику
-/// 2 - Канцтовары
-const goodCategoryID = 2;
-/// Цена может изменятся
-let goodPrice = 250;
+{
+  const item = 'smart проектор philips';
+  const count = 15;
+  const category = 'видео техника';
+  const price = 1200;
 
-let totalPrice = goodCount * goodPrice;
+  console.log(item);
+  console.log(`общая сумма товара: ${count * price}`);
+}
 
-console.log(goodTitle);
-console.log(totalPrice);
+{
+    const item = 'smartphone Huawei FIG-LX1';
+    const count = 31;
+    const category = 'смартфон';
+    const price = 18000;
+  
+    console.log(item);
+    console.log(`общая сумма товара: ${count * price}`);
+}
