@@ -8,7 +8,6 @@ const getRandomArray2 = (len, m, n) => {
             arr[i] = Math.floor(Math.random() * (m - n + 1) ) + n;
         else
             arr[i] = Math.floor(Math.random() * (n - m + 1) ) + m;
-        
     }
     return arr;
 }
