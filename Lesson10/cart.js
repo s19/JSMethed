@@ -5,8 +5,12 @@
         items : [],
         totalPrice : 0,
         count : 0,     
-        getTotalPrice (){
-            return this.totalPrice;
+        get TotalPrice (){
+            let totalPrice = 0;
+            this.items.forEach(element => {
+                totalPrice += (element.price * element.count);
+            });
+            return totalPrice;
         },
         // Принимает три параметра:
         // название товара
@@ -22,19 +26,11 @@
             }
             this.items.push(item);
             this.increaseCount(count); 
-            this.calculateItemPrice();          
+            //this.calculateItemPrice();          
         },
         // Увеличивает свойство count на это число
         increaseCount(count){
             this.count += count;
-        },
-        // пересчитывает стоимость всей корзины и записывает значение в totalPrice 
-        calculateItemPrice(){
-            let totalPrice = 0;
-            this.items.forEach(element => {
-                totalPrice += (element.price * element.count);
-            });
-            this.totalPrice = totalPrice;
         },
         // Очищает полностью нашу корзину, возвращает все значения в изначальные
         clear(){
@@ -43,7 +39,7 @@
         // Выводит в консоль JSON строку из массива items и на следующей строке выводит общую стоимость корзины
         print(){
             console.log(JSON.stringify(this.items));
-            console.log(this.getTotalPrice());
+            ///console.log(this.getTotalPrice());
         },
     };
 
