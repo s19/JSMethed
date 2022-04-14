@@ -33,16 +33,16 @@
         // Выводит в консоль JSON строку из массива items и на следующей строке выводит общую стоимость корзины
         print(){
             console.log(JSON.stringify(this.items));
-            ///console.log(this.getTotalPrice());
+            console.log(this.calculateItemPrice());
         },
     };
 
     cart.add("Maseratti S7", 150000000, 2);
     cart.add("BMW X6", 587000000, 3);
     cart.add("Daewoo Matiz", 107000, 7);
-    // cart.print();
+    cart.print();
 
     // cart.clear();
     // cart.print();
-    console.log(cart.calculateItemPrice());
+    //console.log(cart.calculateItemPrice());
 }
