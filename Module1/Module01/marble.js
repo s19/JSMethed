@@ -61,24 +61,13 @@ let move;
           const botGuessNumber = getRandomIntInclusive(1, result.botMarbles);
           console.log('botGuessNumber: ', botGuessNumber);
           if (result.botMarbles > 0 && result.playerMarbles > 0) {
-            if (window.confirm('Четное число? ')) {
-              console.log(`Мой ответ: четное`);
-              if (botGuessNumber % 2 === 0) {
-                result.playerMarbles += botGuessNumber;
-                result.botMarbles -= botGuessNumber;
-              } else if (botGuessNumber % 2 === 1) {
-                result.playerMarbles -= botGuessNumber;
-                result.botMarbles += botGuessNumber;
-              }
-            } else {
-              console.log(`Мой ответ: нечетное`);
-              if (botGuessNumber % 2 === 0) {
-                result.playerMarbles -= botGuessNumber;
-                result.botMarbles += botGuessNumber;
-              } else if (botGuessNumber % 2 === 1) {
-                result.playerMarbles += botGuessNumber;
-                result.botMarbles -= botGuessNumber;
-              }
+            const isEven = window.confirm('Четное число? ');
+            if (botGuessNumber % 2 === 0) {
+              result.playerMarbles = isEven ? botGuessNumber + 1 : botGuessNumber - 1;
+              result.botMarbles = isEven ? botGuessNumber - 1 : botGuessNumber + 1;
+            } else if (botGuessNumber % 2 === 1) {
+              result.playerMarbles = isEven ? botGuessNumber - 1 : botGuessNumber + 1;
+              result.botMarbles = isEven ? (botGuessNumber + 1) : (botGuessNumber - 1);
             }
             move++;
             console.log(`Количество шариков\nИгрок: ${result.playerMarbles} \nБот: ${result.botMarbles}`);

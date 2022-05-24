@@ -57,13 +57,15 @@
 
         if ((myMove === lang[0] && compMove === lang[1]) || (myMove === lang[1] && compMove === lang[2]) || (myMove === lang[2] && compMove === lang[0])) {
           result.human += 1;
+          // eslint-disable-next-line max-len
           alert(`${lang[5]}: ${compMove}  \n${lang[6]}: ${myMove}\n${lang[8]}: ${lang[6]}!`);
           console.log(compMove + ' ' + myMove);
-        } else if ((myMove === lang[1] && compMove === lang[0]) || (myMove === lang[2] && compMove === lang[1]) || (myMove === lang[0] && compMove === lang[2])) {
+        } else {
           result.computer += 1;
           alert(`${lang[5]}: ${compMove}  \n${lang[6]}: ${myMove}\n${lang[8]}: ${lang[5]}!`);
           console.log(compMove + ' ' + myMove);
-        } else if ((myMove === lang[0] && compMove === lang[0]) || (myMove === lang[1] && compMove === lang[1]) || (myMove === lang[2] && compMove === lang[2])) {
+        }
+        if (myMove === compMove) {
           alert(`${lang[5]}: ${compMove}  \n${lang[6]}: ${myMove} \n${lang[9]}`);
           console.log(compMove + ' ' + myMove);
         }
