@@ -1,0 +1,7 @@
+ Open Git BASH
+ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+ 
+ 1. ssh-keygen -t ed25519 -C "korsar_91sh@mail.ru"
+ 2. eval "$(ssh-agent -s)"
+ 3. ssh-add ~/.ssh/id_ed25519
+ 4. ...

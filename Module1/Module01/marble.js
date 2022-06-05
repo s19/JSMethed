@@ -2,6 +2,7 @@
 
 let move;
 (() => {
+  // eslint-disable-next-line require-jsdoc
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -20,6 +21,7 @@ let move;
 
 
     console.log('Старт игры');
+    // eslint-disable-next-line max-len
     console.log(`Количество шариков\nИгрок: ${result.playerMarbles} \nБот: ${result.botMarbles}`);
 
     console.log('move: ', move);
@@ -39,6 +41,7 @@ let move;
               const botGuessNumber = getRandomIntInclusive(1, 5);
               console.log('botGuessNumber: ', botGuessNumber);
 
+              // eslint-disable-next-line max-len
               if ((botGuessNumber % 2 === 0 && playerNum % 2 === 0) || (botGuessNumber % 2 === 1 && playerNum % 2 === 1)) {
                 result.botMarbles += playerNum;
                 result.playerMarbles -= playerNum;
@@ -50,14 +53,12 @@ let move;
               console.log(`Ответ бота: ${botGuessNumber % 2 === 0 ? 'четное' : 'нечетное'}`);
               console.log(`Количество шариков\nИгрок: ${result.playerMarbles} \nБот: ${result.botMarbles}`);
               start();
-            }
-            else {
+            } else {
               alert('Загадываемое число не должно превысить количество ваших шариков!');
               start();
             }
           }
-        }
-        else {
+        } else {
           const botGuessNumber = getRandomIntInclusive(1, result.botMarbles);
           console.log('botGuessNumber: ', botGuessNumber);
           if (result.botMarbles > 0 && result.playerMarbles > 0) {
@@ -74,8 +75,7 @@ let move;
             start();
           }
         }
-      }
-      else {
+      } else {
         alert(`Победитель: ${result.playerMarbles > result.botMarbles ? 'Вы' : 'Бот'}`);
       }
     };
