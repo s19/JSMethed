@@ -5,3 +5,31 @@
  2. eval "$(ssh-agent -s)"
  3. ssh-add ~/.ssh/id_ed25519
  4. ...
+
+
+git commit -a -m "Some description"
+
+ Work Git
+ ~ git pull --rebase (стягивание изменений)
+ ~ git show [HASHCODE] (git show 9b37b9369cf56ca78ef2e0d530f950a2e184a5d6 - вывод опред. коммита)
+ ~ git log (вывод логов)
+ ~ git log --oneline (вывод столбиком логов)
+ ~ git log --graph (история изменений по одной линиии)
+ ~ git blame [pathToFile] (кто делал какие изменения)
+ ~ git grep h1 (поиск заголовка h1)
+ ~ git clean -fd (удаление неотслеживаемых файлов которые не запушены)
+
+ ~ git restore index.html (восстановление конкретного файла)
+ ~ git checkout (восстановление файлов)
+
+ ~ git revert [HASHCODE] (восстановление файла когда запушен уже)
+ ~ git reset --hard HEAD~ (удаление коммита который еще не запушен)
+
+ ~ git add script/music.js (точечное добавление файла)
+ ~ git commit --amend   (если забыли добавить в этот коммит еще изменения, делаем сначала git add script/music.css)
+ ~ git checkout [HASHCODE] (перемещение в состояние согласно коммиту)
+ ~ git branch (в какой ветке счс)
+ ~ git checkout master (переключится в текущие временные рамки)
+ ~ git stash (до этого сделать(~ git add . )отправка изменений отслеживаемых файлов во временное хранение)
+    делаем какие то изменения в ветке этой же, коммитим
+ ~ git stash pop (достаем изменения до команды stash, которые мы делали и отклали во временное хранилище)
